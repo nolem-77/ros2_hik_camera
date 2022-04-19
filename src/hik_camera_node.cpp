@@ -4,6 +4,7 @@
 #include <image_transport/image_transport.hpp>
 #include <rclcpp/logging.hpp>
 #include <rclcpp/rclcpp.hpp>
+#include <rclcpp/utilities.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/image.hpp>
 
@@ -20,7 +21,7 @@ public:
     RCLCPP_INFO(this->get_logger(), "Found camera count = %d",
                 DeviceList.nDeviceNum);
 
-    while (DeviceList.nDeviceNum == 0) {
+    while (DeviceList.nDeviceNum == 0 && rclcpp::ok()) {
       RCLCPP_ERROR(this->get_logger(), "No camera found!");
       RCLCPP_INFO(this->get_logger(), "Enum state: [%x]", nRet);
       std::this_thread::sleep_for(std::chrono::seconds(1));
