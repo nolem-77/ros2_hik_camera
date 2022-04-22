@@ -101,6 +101,8 @@ public:
         } else {
           RCLCPP_INFO(this->get_logger(), "Get buffer failed! nRet: [%x]",
                       nRet);
+          MV_CC_StopGrabbing(camera_handle_);
+          MV_CC_StartGrabbing(camera_handle_);
         }
       }
     }};
