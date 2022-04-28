@@ -35,7 +35,7 @@ public:
 
     // get camera infomation
     MV_CC_GetImageInfo(camera_handle_, &img_info_);
-    image_msg_.data.reserve(img_info_.nHeightMax * img_info_.nHeightMax * 3);
+    image_msg_.data.reserve(img_info_.nHeightMax * img_info_.nWidthMax * 3);
 
     // Init convert param
     ConvertParam_.nWidth = img_info_.nWidthMax;
