@@ -3,4 +3,4 @@
     camera_name: narrow_stereo
 
     exposure_time: 6000
-    gain: 32
+    gain: 32.0

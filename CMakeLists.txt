@@ -25,13 +25,13 @@ if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
   target_link_directories(${PROJECT_NAME} PUBLIC hikSDK/lib/amd64)
   install(
     DIRECTORY hikSDK/lib/amd64/
-    DESTINATION hikSDK/lib
+    DESTINATION lib
   )
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
   target_link_directories(${PROJECT_NAME} PUBLIC hikSDK/lib/arm64)
   install(
     DIRECTORY hikSDK/lib/arm64/
-    DESTINATION hikSDK/lib
+    DESTINATION lib
   )
 else()
   message(FATAL_ERROR "Unsupport host system architecture: ${CMAKE_HOST_SYSTEM_PROCESSOR}!")
