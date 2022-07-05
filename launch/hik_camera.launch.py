@@ -1,6 +1,6 @@
 import os
 
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory, get_package_prefix
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
@@ -20,6 +20,7 @@ def generate_launch_description():
                               default_value=camera_info_url),
         DeclareLaunchArgument(name='use_sensor_data_qos',
                               default_value='false'),
+
         Node(
             package='hik_camera',
             executable='hik_camera_node',
