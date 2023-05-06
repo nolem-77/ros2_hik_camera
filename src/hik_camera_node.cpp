@@ -38,8 +38,8 @@ public:
     image_msg_.data.reserve(img_info_.nHeightMax * img_info_.nWidthMax * 3);
 
     // Init convert param
-    ConvertParam_.nWidth = img_info_.nWidthMax;
-    ConvertParam_.nHeight = img_info_.nHeightMax;
+    ConvertParam_.nWidth = img_info_.nWidthValue;
+    ConvertParam_.nHeight = img_info_.nHeightValue;
     ConvertParam_.enDstPixelType = PixelType_Gvsp_RGB8_Packed;
 
     bool use_sensor_data_qos = this->declare_parameter("use_sensor_data_qos", false);
