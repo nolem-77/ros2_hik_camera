@@ -2,5 +2,5 @@
   ros__parameters:
     camera_name: narrow_stereo
 
-    exposure_time: 6000
-    gain: 32.0
+    exposure_time: 50000
+    gain: 10.0
